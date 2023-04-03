@@ -14,11 +14,12 @@ then comment out << extern "C" >> bellow in this header file) */
  ________________________________________________________________________________
 |  ____________________________________________________________________________  |
 | |                                                                            | |
+| |  - in tinyfiledialogs, char is UTF-8 by default (since v3.6)               | |
+| |                                                                            | |
 | | on windows:                                                                | |
 | |  - for UTF-16, use the wchar_t functions at the bottom of the header file  | |
 | |  - _wfopen() requires wchar_t                                              | |
 | |                                                                            | |
-| |  - in tinyfiledialogs, char is UTF-8 by default (since v3.6)               | |
 | |  - but fopen() expects MBCS (not UTF-8)                                    | |
 | |  - if you want char to be MBCS: set tinyfd_winUtf8 to 0                    | |
 | |                                                                            | |

@@ -35,11 +35,12 @@ Bindings for LUA and C# dll, Haskell, Fortran. Included in LWJGL(java), Rust, Al
  ________________________________________________________________________________
 |  ____________________________________________________________________________  |
 | |                                                                            | |
+| |  - in tinyfiledialogs, char is UTF-8 by default (since v3.6)               | |
+| |                                                                            | |
 | | on windows:                                                                | |
 | |  - for UTF-16, use the wchar_t functions at the bottom of the header file  | |
 | |  - _wfopen() requires wchar_t                                              | |
 | |                                                                            | |
-| |  - in tinyfiledialogs, char is UTF-8 by default (since v3.6)               | |
 | |  - but fopen() expects MBCS (not UTF-8)                                    | |
 | |  - if you want char to be MBCS: set tinyfd_winUtf8 = 0                     | |
 | |                                                                            | |
@@ -47,6 +48,12 @@ Bindings for LUA and C# dll, Haskell, Fortran. Included in LWJGL(java), Rust, Al
 | |                        functions to convert between UTF-8, UTF-16 and MBCS | |
 | |____________________________________________________________________________| |
 |________________________________________________________________________________|
+ ___________________________________________________________________________________
+|  _______________________________________________________________________________  |
+| |                                                                               | |
+| | wchar_t UTF-16 (windows only) prototypes are at the bottom of the header file | |
+| |_______________________________________________________________________________| |
+|___________________________________________________________________________________|
 
 void tinyfd_beep();
 

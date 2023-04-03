@@ -20,6 +20,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../README.txt" />
 		<Unit filename="../hello.c">
 			<Option compilerVar="CC" />
 		</Unit>
