@@ -4516,7 +4516,7 @@ int tinyfd_messageBox(
             strcat(lDialogString, "\"");
          }
 
-         strcat(lDialogString, " --icon-name=dialog-");
+         strcat(lDialogString, " --image=dialog-");
          if (aIconType && (!strcmp("question", aIconType)
             || !strcmp("error", aIconType)
             || !strcmp("warning", aIconType)))
