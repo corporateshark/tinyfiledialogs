@@ -41,7 +41,7 @@
 ! 7) Add existing files: tinyfd_module.f90 and tinyfd_main.f90 
 ! 6) In the properties of this fortran project, in the linker input field, add:
 !              comdlg32.lib ole32.lib user32.lib shell32.lib
-! 7) Build and Run. Voila !
+! 7) Build and Run. Voila ! (fortran project and C project must be very similar)
 
 	program main
 		use tinyfd
