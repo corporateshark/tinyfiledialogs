@@ -6923,11 +6923,12 @@ frontmost of process \\\"Python\\\" to true' ''');");
                 p += strlen( p );
         }
     pclose( lIn ) ;
-    if ( lBuff[strlen( lBuff ) -1] == '\n' )
+
+    if ( strlen( lBuff ) && lBuff[strlen( lBuff ) -1] == '\n' )
     {
         lBuff[strlen( lBuff ) -1] = '\0' ;
     }
-    /* printf( "lBuff: %s\n" , lBuff ) ; */
+    /* printf( "strlen lBuff: %d\n" , strlen( lBuff ) ) ; */
         if ( lWasKdialog && aAllowMultipleSelects )
         {
                 p = lBuff ;
