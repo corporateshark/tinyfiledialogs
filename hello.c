@@ -93,7 +93,7 @@ int main( int argc , char * argv[] )
    and pass them passed to _wfopen() instead of fopen() */
 #endif
 
-	/*tinyfd_beep();*/
+	tinyfd_beep();
 
 	lWillBeGraphicMode = tinyfd_inputBox("tinyfd_query", NULL, NULL);
 
@@ -252,8 +252,6 @@ quit [Cancel]",
 	tinyfd_messageBox("The selected hexcolor is", lTheHexColor, "ok", "info", 1);
 
 	tinyfd_messageBox("your read password was", lPassword, "ok", "info", 1);
-
-	tinyfd_beep();
 
 	return 0;
 }

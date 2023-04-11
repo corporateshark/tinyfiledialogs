@@ -56,6 +56,8 @@ int main(void) /* WINDOWS ONLY */
 	wchar_t lBuffer[1024];
 	wchar_t const * lFilterPatterns[2] = { L"*.txt", L"*.text" };
 
+	tinyfd_beep();
+
 	lWillBeGraphicMode = tinyfd_inputBoxW(L"tinyfd_query", NULL, NULL);
 
 	wcscpy(lBuffer, L"v");
@@ -192,8 +194,6 @@ int main(void) /* WINDOWS ONLY */
 		lTheHexColor, L"ok", L"info", 1);
 
 	tinyfd_messageBoxW(L"your password was", lPassword, L"ok", L"info", 1);
-
-	tinyfd_beep();
 
 	return 0;
 }
