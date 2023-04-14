@@ -5262,14 +5262,7 @@ int tinyfd_notifyPopup(
         if ( getenv("SSH_TTY") )
         {
             if (aTitle&&!strcmp(aTitle,"tinyfd_query")){strcpy(tinyfd_response,"dunst");return 1;}
-            strcpy( lDialogString , "dunstify" ) ;
-            if ( aIconType && strlen(aIconType) )
-            {
-                    strcat( lDialogString , " -i '" ) ;
-                    strcat( lDialogString , aIconType ) ;
-                    strcat( lDialogString , "'" ) ;
-            }
-            strcat( lDialogString , " \"" ) ;
+            strcpy( lDialogString , "notify-send \"" ) ;
             if ( aTitle && strlen(aTitle) )
             {
                 strcat( lDialogString , aTitle ) ;
@@ -5420,28 +5413,28 @@ aIconType?aIconType:"", aTitle?aTitle:"", aMessage?aMessage:"" ) ;
         }
         else if ( notifysendPresent() )
         {
-                if (aTitle&&!strcmp(aTitle,"tinyfd_query")){strcpy(tinyfd_response,"notifysend");return 1;}
-                strcpy( lDialogString , "notify-send" ) ;
-                if ( aIconType && strlen(aIconType) )
-                {
-                        strcat( lDialogString , " -i '" ) ;
-                        strcat( lDialogString , aIconType ) ;
-                        strcat( lDialogString , "'" ) ;
-                }
-        strcat( lDialogString , " \"" ) ;
-                if ( aTitle && strlen(aTitle) )
-                {
-                        strcat(lDialogString, aTitle) ;
-                        strcat( lDialogString , " | " ) ;
-                }
-                if ( aMessage && strlen(aMessage) )
-                {
-            tfd_replaceSubStr( aMessage , "\n\t" , " |  " , lBuff ) ;
-            tfd_replaceSubStr( aMessage , "\n" , " | " , lBuff ) ;
-            tfd_replaceSubStr( aMessage , "\t" , "  " , lBuff ) ;
-                        strcat(lDialogString, lBuff) ;
-                }
-                strcat( lDialogString , "\"" ) ;
+            if (aTitle&&!strcmp(aTitle,"tinyfd_query")){strcpy(tinyfd_response,"notifysend");return 1;}
+            strcpy( lDialogString , "notify-send" ) ;
+            if ( aIconType && strlen(aIconType) )
+            {
+                    strcat( lDialogString , " -i '" ) ;
+                    strcat( lDialogString , aIconType ) ;
+                    strcat( lDialogString , "'" ) ;
+            }
+            strcat( lDialogString , " \"" ) ;
+            if ( aTitle && strlen(aTitle) )
+            {
+                    strcat(lDialogString, aTitle) ;
+                    strcat( lDialogString , " | " ) ;
+            }
+            if ( aMessage && strlen(aMessage) )
+            {
+                tfd_replaceSubStr( aMessage , "\n\t" , " |  " , lBuff ) ;
+                tfd_replaceSubStr( aMessage , "\n" , " | " , lBuff ) ;
+                tfd_replaceSubStr( aMessage , "\t" , "  " , lBuff ) ;
+                strcat(lDialogString, lBuff) ;
+            }
+            strcat( lDialogString , "\"" ) ;
         }
         else
         {
