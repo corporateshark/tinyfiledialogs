@@ -3845,7 +3845,7 @@ static int dunstPresent(void)
             lIn = popen( "ps | grep dunst | grep -v grep" , "r" ) ;
             lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
             pclose( lIn ) ;
-            /* if ( lTmp ) printf("lTmp:%s\n", lTmp); */
+            if ( lTmp ) printf("lTmp:%s\n", lTmp);
             if ( lTmp ) lDunstPresent = 1 ;
             else lDunstPresent = 0 ;
             if (tinyfd_verbose) printf("lDunstPresent %d\n", lDunstPresent);
