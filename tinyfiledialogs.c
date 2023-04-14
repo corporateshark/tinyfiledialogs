@@ -3842,7 +3842,7 @@ static int dunstPresent(void)
         lDunstPresent = detectPresence( "dunst" ) ;
         if ( lDunstPresent )
         {
-            lIn = popen( "ps -e | grep dunst | grep -v grep" , "r" ) ;
+            lIn = popen( "ps -e | grep dunst | grep -v grep" , "r" ) ; /* add "| wc -l" to receive the number of lines */
             lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
             pclose( lIn ) ;
             /* if ( lTmp ) printf("lTmp:%s\n", lTmp); */
