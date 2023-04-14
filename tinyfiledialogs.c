@@ -3808,7 +3808,7 @@ static int osascriptPresent(void)
 
 static int dunstifyPresent(void)
 {
-    static int lDunstifyPresent = 0 ;
+    static int lDunstifyPresent = -1 ;
 	static char lBuff[MAX_PATH_OR_CMD] ;
 	FILE * lIn ;
 	char * lTmp ;
