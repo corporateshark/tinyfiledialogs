@@ -3316,28 +3316,6 @@ static int detectPresence( char const * aExecutable )
 }
 
 
-static int isDunstActive( void )
-{
-	static char lBuff[MAX_PATH_OR_CMD] ;
-	FILE * lIn ;
-	char * lTmp ;
-	static int lDunstActive = -1 ;
-
-    if ( lDunstActive < 0 )
-    {
-        /* lIn = popen( "dunstify -s" , "r" ) ; */
-        lIn = popen( "dunst" , "r" ) ;
-            lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
-            pclose( lIn ) ;
-
-        /* printf("lTmp:%s\n", lTmp); */
-        lDunstActive = strstr(lTmp,"dunst") ? 1 : 0 ;
-    }
-
-    return lDunstActive ;
-}
-
-
 static char * getVersion( char const * aExecutable ) /*version must be first numeral*/
 {
 	static char lBuff[MAX_PATH_OR_CMD] ;
@@ -3828,12 +3806,47 @@ static int osascriptPresent(void)
 }
 
 
+static int dunstifyPresent(void)
+{
+    static int lDunstifyPresent = -1 ;
+	static char lBuff[MAX_PATH_OR_CMD] ;
+	FILE * lIn ;
+	char * lTmp ;
+
+    if ( lDunstifyPresent < 0 )
+    {
+        lDunstifyPresent = detectPresence( "dunstify" ) ;
+        if ( lDunstifyPresent < 0 )
+        {
+            lIn = popen( "dunstify -s" , "r" ) ;
+            lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
+            pclose( lIn ) ;
+            /* printf("lTmp:%s\n", lTmp); */
+            lDunstifyPresent = strstr(lTmp,"name:dunst\n") ? 1 : 0 ;
+        }
+    }
+    return lDunstifyPresent && graphicMode( ) ;
+}
+
+
 static int dunstPresent(void)
 {
     static int lDunstPresent = -1 ;
+	static char lBuff[MAX_PATH_OR_CMD] ;
+	FILE * lIn ;
+	char * lTmp ;
+
     if ( lDunstPresent < 0 )
     {
         lDunstPresent = detectPresence( "dunst" ) ;
+        if ( lDunstPresent < 0 )
+        {
+            lIn = popen( "dunst" , "r" ) ;
+            lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
+            pclose( lIn ) ;
+            /* printf("lTmp:%s\n", lTmp); */
+            lDunstPresent = strstr(lTmp,"dunst") ? 1 : 0 ;
+        }
     }
     return lDunstPresent && graphicMode( ) ;
 }
@@ -5232,8 +5245,7 @@ int tinyfd_notifyPopup(
 		if (tfd_quoteDetected(aTitle)) return tinyfd_notifyPopup("INVALID TITLE WITH QUOTES", aMessage, aIconType);
 		if (tfd_quoteDetected(aMessage)) return tinyfd_notifyPopup(aTitle, "INVALID MESSAGE WITH QUOTES", aIconType);
 
-        //if ( getenv("SSH_TTY") && (!dunstPresent() || !isDunstActive()) )
-        if ( (!dunstPresent() || !isDunstActive()) )
+        if ( getenv("SSH_TTY") && (!dunstifyPresent() || !dunstPresent()) )
         {
             return tinyfd_messageBox(aTitle, aMessage, "ok", aIconType, 0);
         }
