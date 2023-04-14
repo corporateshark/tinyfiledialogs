@@ -5257,13 +5257,11 @@ int tinyfd_notifyPopup(
             if ( aTitle && strlen(aTitle) )
             {
                 strcat( lDialogString , aTitle ) ;
-                strcat( lDialogString , "\" \"" ) ;
+                strcat( lDialogString , "\"" ) ;
             }
             if ( aMessage && strlen(aMessage) )
             {
-//                tfd_replaceSubStr( aMessage , "\n\t" , " |  " , lBuff ) ;
-//                tfd_replaceSubStr( aMessage , "\n" , " | " , lBuff ) ;
-//                tfd_replaceSubStr( aMessage , "\t" , "  " , lBuff ) ;
+                strcat( lDialogString , " \"" ) ;
                 strcpy(lBuff, aMessage) ;
                 strcat(lDialogString, lBuff) ;
             }
