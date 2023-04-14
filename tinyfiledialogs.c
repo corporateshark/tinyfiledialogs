@@ -3845,8 +3845,12 @@ static int dunstPresent(void)
             lIn = popen( "dunst" , "r" ) ;
             lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
             pclose( lIn ) ;
-             printf("lTmp:%s\n", lTmp); /**/
-            lDunstPresent = strstr(lTmp,"dunst") ? 1 : 0 ;
+            if ( lTmp )
+            {
+                printf("lTmp:%s\n", lTmp); /**/
+                lDunstPresent = strstr(lTmp,"dunst") || strstr(lTmp,"Name Lost.") ? 1 : 0 ;
+            }
+            else lDunstPresent = 1 ;
             if (tinyfd_verbose) printf("lDunstPresent %d\n", lDunstPresent);
         }
     }
