@@ -3832,7 +3832,7 @@ static int dunstifyPresent(void)
 
 static int dunstPresent(void)
 {
-    static int lDunstPresent = 0 ;
+    static int lDunstPresent = -1 ;
 	static char lBuff[MAX_PATH_OR_CMD] ;
 	FILE * lIn ;
 	char * lTmp ;
