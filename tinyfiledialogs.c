@@ -3845,7 +3845,7 @@ static int dunstPresent(void)
             lIn = popen( "dunst" , "r" ) ;
             lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
             pclose( lIn ) ;
-            /* printf("lTmp:%s\n", lTmp); */
+             printf("lTmp:%s\n", lTmp); /**/
             lDunstPresent = strstr(lTmp,"dunst") ? 1 : 0 ;
             if (tinyfd_verbose) printf("lDunstPresent %d\n", lDunstPresent);
         }
@@ -5247,7 +5247,7 @@ int tinyfd_notifyPopup(
 		if (tfd_quoteDetected(aTitle)) return tinyfd_notifyPopup("INVALID TITLE WITH QUOTES", aMessage, aIconType);
 		if (tfd_quoteDetected(aMessage)) return tinyfd_notifyPopup(aTitle, "INVALID MESSAGE WITH QUOTES", aIconType);
 
-        if ( getenv("SSH_TTY") && (!dunstifyPresent() && !dunstPresent()) )
+        if ( getenv("SSH_TTY") && !dunstifyPresent() && !dunstPresent() )
         {
             return tinyfd_messageBox(aTitle, aMessage, "ok", aIconType, 0);
         }
