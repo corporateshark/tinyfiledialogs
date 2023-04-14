@@ -3808,7 +3808,7 @@ static int osascriptPresent(void)
 
 static int dunstifyPresent(void)
 {
-    static int lDunstifyPresent = -1 ;
+    static int lDunstifyPresent = 0 ;
 	static char lBuff[MAX_PATH_OR_CMD] ;
 	FILE * lIn ;
 	char * lTmp ;
@@ -3847,8 +3847,8 @@ static int dunstPresent(void)
             pclose( lIn ) ;
             if ( lTmp )
             {
-                printf("lTmp:%s\n", lTmp); /**/
-                lDunstPresent = strstr(lTmp,"dunst") || strstr(lTmp,"Name Lost.") ? 1 : 0 ;
+                /* printf("lTmp:%s\n", lTmp); */
+                lDunstPresent = strstr(lTmp,"dunst") ? 1 : 0 ;
             }
             else lDunstPresent = 1 ;
             if (tinyfd_verbose) printf("lDunstPresent %d\n", lDunstPresent);
