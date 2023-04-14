@@ -5262,8 +5262,7 @@ int tinyfd_notifyPopup(
             if ( aMessage && strlen(aMessage) )
             {
                 strcat( lDialogString , " \"" ) ;
-                strcpy(lBuff, aMessage) ;
-                strcat(lDialogString, lBuff) ;
+                strcat(lDialogString, aMessage) ;
             }
             strcat( lDialogString , "\"" ) ;
         }
