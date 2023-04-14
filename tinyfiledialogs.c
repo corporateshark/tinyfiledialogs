@@ -4133,7 +4133,7 @@ static int tkinter2Present(void)
 			sprintf( lPythonCommand , "%s %s" , gPython2Name , lPythonParams ) ;
 			lTkinter2Present = tryCommand(lPythonCommand) ;
 		}
-		if (tinyfd_verbose) printf("lTkinter2Present %d\n", lTkinter2Present) ;
+		if (tinyfd_verbose) printf("lTkinter2Present %d graphicMode %d \n", lTkinter2Present, graphicMode() ) ;
 	}
 	return lTkinter2Present && graphicMode() && !(tfd_isDarwin() && getenv("SSH_TTY") );
 }
