@@ -3816,13 +3816,14 @@ static int dunstifyPresent(void)
     if ( lDunstifyPresent < 0 )
     {
         lDunstifyPresent = detectPresence( "dunstify" ) ;
-        if ( lDunstifyPresent < 0 )
+        if ( lDunstifyPresent )
         {
             lIn = popen( "dunstify -s" , "r" ) ;
             lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
             pclose( lIn ) ;
             /* printf("lTmp:%s\n", lTmp); */
             lDunstifyPresent = strstr(lTmp,"name:dunst\n") ? 1 : 0 ;
+            if (tinyfd_verbose) printf("lDunstifyPresent %d\n", lDunstifyPresent);
         }
     }
     return lDunstifyPresent && graphicMode( ) ;
@@ -3839,13 +3840,14 @@ static int dunstPresent(void)
     if ( lDunstPresent < 0 )
     {
         lDunstPresent = detectPresence( "dunst" ) ;
-        if ( lDunstPresent < 0 )
+        if ( lDunstPresent )
         {
             lIn = popen( "dunst" , "r" ) ;
             lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
             pclose( lIn ) ;
             /* printf("lTmp:%s\n", lTmp); */
             lDunstPresent = strstr(lTmp,"dunst") ? 1 : 0 ;
+            if (tinyfd_verbose) printf("lDunstPresent %d\n", lDunstPresent);
         }
     }
     return lDunstPresent && graphicMode( ) ;
