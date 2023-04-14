@@ -3847,7 +3847,7 @@ static int dunstPresent(void)
             pclose( lIn ) ;
             if ( lTmp )
             {
-                /* printf("lTmp:%s\n", lTmp); */
+                 printf("lTmp:%s\n", lTmp); /**/
                 lDunstPresent = strstr(lTmp,"dunst") ? 1 : 0 ;
             }
             else lDunstPresent = 1 ;
