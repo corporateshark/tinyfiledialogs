@@ -3325,12 +3325,13 @@ static int isDunstActive( void )
 
     if ( lDunstActive < 0 )
     {
-        lIn = popen( "dunstify -s" , "r" ) ;
+        /* lIn = popen( "dunstify -s" , "r" ) ; */
+        lIn = popen( "dunst" , "r" ) ;
             lTmp = fgets( lBuff , sizeof( lBuff ) , lIn ) ;
             pclose( lIn ) ;
 
         /* printf("lTmp:%s\n", lTmp); */
-        lDunstActive = strstr(lTmp,"name:dunst\n") ? 1 : 0 ;
+        lDunstActive = strstr(lTmp,"dunst") ? 1 : 0 ;
     }
 
     return lDunstActive ;
@@ -3832,7 +3833,7 @@ static int dunstPresent(void)
     static int lDunstPresent = -1 ;
     if ( lDunstPresent < 0 )
     {
-        lDunstPresent = detectPresence( "dunstify" ) ;
+        lDunstPresent = detectPresence( "dunst" ) ;
     }
     return lDunstPresent && graphicMode( ) ;
 }
@@ -5231,7 +5232,8 @@ int tinyfd_notifyPopup(
 		if (tfd_quoteDetected(aTitle)) return tinyfd_notifyPopup("INVALID TITLE WITH QUOTES", aMessage, aIconType);
 		if (tfd_quoteDetected(aMessage)) return tinyfd_notifyPopup(aTitle, "INVALID MESSAGE WITH QUOTES", aIconType);
 
-        if ( getenv("SSH_TTY") && (!dunstPresent() || !isDunstActive()) )
+        //if ( getenv("SSH_TTY") && (!dunstPresent() || !isDunstActive()) )
+        if ( (!dunstPresent() || !isDunstActive()) )
         {
             return tinyfd_messageBox(aTitle, aMessage, "ok", aIconType, 0);
         }
