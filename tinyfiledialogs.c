@@ -5143,7 +5143,7 @@ my \\$notificationsObject = \\$notificationsService->get_object('/org/freedeskto
                                         printf("\n%s\n",aMessage);
                                 }
                                 printf("y/n: "); fflush(stdout);
-                                lChar = tolower( getchar() ) ;
+                                lChar = (char) tolower( getchar() ) ;
                                 printf("\n\n");
                         }
                         while ( lChar != 'y' && lChar != 'n' );
@@ -5158,7 +5158,7 @@ my \\$notificationsObject = \\$notificationsService->get_object('/org/freedeskto
                                         printf("\n%s\n",aMessage);
                                 }
                                 printf("[O]kay/[C]ancel: "); fflush(stdout);
-                                lChar = tolower( getchar() ) ;
+                                lChar = (char) tolower( getchar() ) ;
                                 printf("\n\n");
                         }
                         while ( lChar != 'o' && lChar != 'c' );
@@ -5173,7 +5173,7 @@ my \\$notificationsObject = \\$notificationsService->get_object('/org/freedeskto
                                         printf("\n%s\n",aMessage);
                                 }
                                 printf("[Y]es/[N]o/[C]ancel: "); fflush(stdout);
-                                lChar = tolower( getchar() ) ;
+                                lChar = (char) tolower( getchar() ) ;
                                 printf("\n\n");
                         }
                         while ( lChar != 'y' && lChar != 'n' && lChar != 'c' );
