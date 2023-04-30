@@ -169,8 +169,8 @@ $ clang -o hello.app hello.c tinyfiledialogs.c
 UNIX :
 $ gcc -o hello hello.c tinyfiledialogs.c
 ( or clang tcc owcc cc CC )
-( usefull warnings: -Wall -Wextra -Wdouble-promotion -Wconversion -Wno-sign-conversion
--Wno-unused-parameter -Wno-unused-function -Wno-sign-conversion -fsanitize=undefined )
+( usefull warnings: -g3 -Wall -Wextra -Wdouble-promotion -Wconversion -Wno-sign-conversion
+-Wno-unused-parameter -Wno-unused-function -fsanitize=undefined -fsanitize=thread )
 
 Windows :
   MinGW needs gcc >= v4.9 otherwise some headers are incomplete
