@@ -28,7 +28,7 @@ Included in LWJGL(java), Rust, Haskell, Allegrobasic.
          ___________________________________________________________
         |                                                           |
         | v3.10: NEW FORTRAN module fully implemented with examples |
-        | v3.13: NEW PASCAL module fully implemented with examples  |
+        | v3.13: NEW PASCAL unit fully implemented with examples    |
         |___________________________________________________________|
      _____________________________________________________________________
     |                                                                     |
