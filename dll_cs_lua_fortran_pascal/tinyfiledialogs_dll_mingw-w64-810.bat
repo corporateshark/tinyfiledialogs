@@ -1,4 +1,4 @@
-:: cd C:\Users\frogs\yomspace2015\yomlibs\tinyfd\extras_dll_cs_lua_fortran
+:: cd C:\Users\frogs\yomspace2015\yomlibs\tinyfd\dll_cs_lua_fortran_pascal
 
 :: x86
 \mingw-w64-10.2\mingw32\bin\gcc -ansi -std=c89 -pedantic -Wstrict-prototypes -m32 -Wall -c ../tinyfiledialogs.c

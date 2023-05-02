@@ -1,5 +1,5 @@
 
-:: cd C:\Users\frogs\yomspace2015\yomlibs\tinyfd\extras_dll_cs_lua_fortran
+:: cd C:\Users\frogs\yomspace2015\yomlibs\tinyfd\dll_cs_lua_fortran_pascal
 
 \MinGW32-49\bin\gcc -ansi -std=gnu89 -pedantic -Wstrict-prototypes -Wall -c ../tinyfiledialogs.c
 \MinGW32-49\bin\dlltool --export-all-symbols -l tinyfiledialogs32.lib tinyfiledialogs.o --dllname tinyfiledialogs32.dll
