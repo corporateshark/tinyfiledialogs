@@ -1,4 +1,4 @@
-tiny file dialogs ( cross-platform C C++ ) v3.12 [Apr 14, 2023] zlib licence
+tiny file dialogs ( cross-platform C C++ ) v3.13 [May 2, 2023] zlib licence
  _________
 /         \   Tray-popup InputBox PasswordBox MessageBox Notification Beep
 |tiny file|   ColorPicker OpenFileDialog SaveFileDialog SelectFolderDialog
@@ -12,7 +12,8 @@ on Windows Mac Linux Bsd Solaris Minix Raspbian Flatpak
 using Gnome Kde Mate Enlightenment Cinnamon Budgie Unity Lxde Lxqt Xfce
       WindowMaker IceWm Cde Jds OpenBox Awesome Jwm Xdm Cwm
 
-Bindings for LUA and C# dll, Haskell, Fortran. Included in LWJGL(java), Rust, Allegrobasic
+Bindings for LUA, C#, dll, Fortran, Pascal.
+Included in LWJGL(java), Rust, Haskell, Allegrobasic.
 
                    http://tinyfiledialogs.sourceforge.net
          git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
@@ -27,6 +28,7 @@ Bindings for LUA and C# dll, Haskell, Fortran. Included in LWJGL(java), Rust, Al
          ___________________________________________________________
         |                                                           |
         | v3.10: NEW FORTRAN module fully implemented with examples |
+        | v3.13: NEW PASCAL module fully implemented with examples  |
         |___________________________________________________________|
      _____________________________________________________________________
     |                                                                     |

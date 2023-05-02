@@ -22,7 +22,7 @@
 !         ___________________________________________________________
 !        |                                                           |
 !        |     If you like this new FORTRAN module please upvote     |
-!        |        my stackoverflow answer on the FROTRAN post        |
+!        |        my stackoverflow answer on the FORTRAN post        |
 !        |            https://stackoverflow.com/a/59657117           |
 !        |___________________________________________________________|
 
