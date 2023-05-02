@@ -1,6 +1,6 @@
 !  _________
 ! /         \ tinyfiledialogs v3.10 [Mar 27, 2023] zlib licence
-! |tiny file| 
+! |tiny file|
 ! | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
 ! \____  ___/ http://tinyfiledialogs.sourceforge.net
 !      \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
@@ -96,4 +96,3 @@
 
 		end interface ! C interface
 	end module tinyfd
-

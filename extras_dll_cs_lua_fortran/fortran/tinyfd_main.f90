@@ -1,6 +1,6 @@
 !  _________
 ! /         \ tinyfiledialogs v3.10 [Mar 27, 2023] zlib licence
-! |tiny file| 
+! |tiny file|
 ! | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
 ! \____  ___/ http://tinyfiledialogs.sourceforge.net
 !      \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
@@ -37,8 +37,8 @@
 ! 2) Add existing files: tinyfiledialogs.c and tinyfiledialogs.h
 ! 3) Build this project. It will fail because there is no main(), but it will create tinyfiledialogs.obj
 ! 4) Create a new empty Fortran project, verify the configuration is for X64.
-! 5) Add existing file: tinyfiledialogs.obj - the one that was created on 3) 
-! 7) Add existing files: tinyfd_module.f90 and tinyfd_main.f90 
+! 5) Add existing file: tinyfiledialogs.obj - the one that was created on 3)
+! 7) Add existing files: tinyfd_module.f90 and tinyfd_main.f90
 ! 6) In the properties of this fortran project, in the linker input field, add:
 !              comdlg32.lib ole32.lib user32.lib shell32.lib
 ! 7) Build and Run. Voila ! (fortran project and C project must be very similar)
@@ -88,7 +88,7 @@
 		cpointer = tinyfd_inputBox(aTitle, aMessage, c_loc(aDefaultInput) )
 		! or for a password box: cpointer = tinyfd_inputbox(atitle, amessage, c_null_ptr )
 		if ( c_associated(cpointer) ) then
-			call c_f_pointer(cpointer, fpointer) ! Convert C Pointer to Fortran pointer		
+			call c_f_pointer(cpointer, fpointer) ! Convert C Pointer to Fortran pointer
 			string = fpointer(1:index(fpointer,c_null_char)-1) ! Remove NULL character at the end
 			write (*,'(A)') string
 		endif
@@ -113,7 +113,7 @@
 		deallocate (aFilterPatterns)
 		deallocate (lExtensions)
 		if ( c_associated(cpointer) ) then
-			call c_f_pointer(cpointer, fpointer) ! Convert C Pointer to Fortran pointer		
+			call c_f_pointer(cpointer, fpointer) ! Convert C Pointer to Fortran pointer
 			string = fpointer(1:index(fpointer,c_null_char)-1) ! Remove NULL character at the end
 			write (*,'(A)') string
 		endif
@@ -140,7 +140,7 @@
 		deallocate (aFilterPatterns)
 		deallocate (lExtensions)
 		if ( c_associated(cpointer) ) then
-			call c_f_pointer(cpointer, fpointer) ! Convert C Pointer to Fortran pointer		
+			call c_f_pointer(cpointer, fpointer) ! Convert C Pointer to Fortran pointer
 			string = fpointer(1:index(fpointer,c_null_char)-1) ! Remove NULL character at the end
 			write (*,'(A)') string
 		endif
@@ -184,9 +184,8 @@
 ! 2) Add existing files: tinyfiledialogs.c and tinyfiledialogs.h
 ! 3) Build this project. It will fail because there is no main(), but it will create tinyfiledialogs.obj
 ! 4) Create a new empty Fortran project, verify the configuration is for X64.
-! 5) Add existing file: tinyfiledialogs.obj - the one that was created on 3) 
-! 7) Add existing files: tinyfd_module.f90 and tinyfd_main.f90 
+! 5) Add existing file: tinyfiledialogs.obj - the one that was created on 3)
+! 7) Add existing files: tinyfd_module.f90 and tinyfd_main.f90
 ! 6) In the properties of this fortran project, in the linker input field, add:
 !              comdlg32.lib ole32.lib user32.lib shell32.lib
 ! 7) Build and Run. Voila !
-
