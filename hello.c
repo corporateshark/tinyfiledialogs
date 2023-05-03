@@ -137,7 +137,7 @@ quit [Cancel]",
 
 	lTheSaveFileName = tinyfd_saveFileDialog(
 		"let us save this password",
-		"passwordFile.txt",
+		"../../passwordFile.txt",
 		2,
 		lFilterPatterns,
 		NULL);

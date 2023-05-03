@@ -1,4 +1,4 @@
-{ _________
+ { _________
  /         \ tinyfiledialogs v3.13 [May 2, 2023] zlib licence
  |tiny file|
  | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
@@ -29,23 +29,54 @@
 
 program Hello ;
 
-uses tinyfd;
+uses tinyfd ;
 
 var
+    lReturnedChar : Pchar;
+    lReturnedValue : Integer ;
     lCRetrunedString: String ;
     lArrayOfChar: array[0..2] of byte = (0,0,255);
 
-
 begin
-   writeln ('Hello tinyfd');
-   tinyfd.tinyfd_beep();
-   tinyfd.tinyfd_messageBox('A Title','A Message', 'ok', 'info', 1);
-   lCRetrunedString := tinyfd_inputBox('A Title','A Message', 'hello tinyfd');
-   writeln (lCRetrunedString);
-   lCRetrunedString := tinyfd_colorChooser('A Title','', lArrayOfChar, lArrayOfChar);
-   writeln (lCRetrunedString);
-   lCRetrunedString := tinyfd_colorChooser('A Title','#FF0000', lArrayOfChar, lArrayOfChar);
-   writeln (lArrayOfChar[0] , lArrayOfChar[1] ,lArrayOfChar[2]);
+    writeln ('Hello tinyfd');
+    tinyfd_beep();
+
+    lReturnedChar := tinyfd_inputBox('tinyfd_query', '', '');
+    writeln (tinyfd_response);
+    if lReturnedChar <> nil then
+        lReturnedValue := tinyfd_messageBox('Graphic Mode',tinyfd_response, 'okcancel', 'info', 1)
+	else
+        lReturnedValue := tinyfd_messageBox('Console Mode',tinyfd_response, 'okcancel', 'info', 1);
+
+    if lReturnedValue = 0 then exit;
+
+    lReturnedValue := tinyfd_messageBox('A tinyfd title','graphic dialogs [Yes] / console mode [No]', 'yesno', 'question', 1);
+    if lReturnedValue = 0  then tinyfd_forceConsole := 1 ;
+
+	tinyfd_notifyPopup('A tinyfd title', 'This is a notification', 'warning');
+
+    lCRetrunedString := tinyfd_inputBox('A tinyfd title','This is an input box', '');
+    writeln (lCRetrunedString);
+    if Length(lCRetrunedString) = 0 then exit;
+
+    lCRetrunedString := tinyfd_inputBox('A tinyfd title','This is a password box', nil);
+    writeln (lCRetrunedString);
+    if Length(lCRetrunedString) = 0 then exit;
+
+    lCRetrunedString := tinyfd_saveFileDialog('Choose a filename to save to','../lala.txt', 0, nil,nil);
+    writeln (lCRetrunedString);
+    if Length(lCRetrunedString) = 0 then exit;
+
+    lCRetrunedString := tinyfd_openFileDialog('Choose a filename to read from','../lala.txt', 0, nil, nil, 0);
+    writeln (lCRetrunedString);
+    if Length(lCRetrunedString) = 0 then exit;
+
+    lCRetrunedString := tinyfd_selectFolderDialog('Select a folder','../..');
+    writeln (lCRetrunedString);
+    if Length(lCRetrunedString) = 0 then exit;
+
+    lCRetrunedString := tinyfd_colorChooser('A tinyfd title','', lArrayOfChar, lArrayOfChar);
+    writeln (lCRetrunedString);
 end.
 
 {
