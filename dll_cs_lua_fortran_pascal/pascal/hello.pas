@@ -34,7 +34,7 @@ uses tinyfd ;
 var
     lReturnedChar : Pchar;
     lReturnedValue : Integer ;
-    lCRetrunedString: String ;
+    lCReturnedString: String ;
     lArrayOfChar: array[0..2] of byte = (0,0,255);
 
 begin
@@ -55,28 +55,29 @@ begin
 
 	tinyfd_notifyPopup('A tinyfd title', 'This is a notification', 'warning');
 
-    lCRetrunedString := tinyfd_inputBox('A tinyfd title','This is an input box', '');
-    writeln (lCRetrunedString);
-    if Length(lCRetrunedString) = 0 then exit;
+    lReturnedChar := tinyfd_inputBox('A tinyfd title','This is an input box', '');
+    if lReturnedChar = nil then exit; { detect cancel was pressed - no input is allowed }
+    lCReturnedString := StrPas(lReturnedChar);
+    writeln (lCReturnedString);
 
-    lCRetrunedString := tinyfd_inputBox('A tinyfd title','This is a password box', nil);
-    writeln (lCRetrunedString);
-    if Length(lCRetrunedString) = 0 then exit;
+    lCReturnedString := tinyfd_inputBox('A tinyfd title','This is a password box', nil);
+    writeln (lCReturnedString);
+    if Length(lCReturnedString) = 0 then exit; { detect no input }
 
-    lCRetrunedString := tinyfd_saveFileDialog('Choose a filename to save to','../lala.txt', 0, nil,nil);
-    writeln (lCRetrunedString);
-    if Length(lCRetrunedString) = 0 then exit;
+    lCReturnedString := tinyfd_saveFileDialog('Choose a filename to save to','lala.txt', 0, nil,nil);
+    writeln (lCReturnedString);
+    if Length(lCReturnedString) = 0 then exit;
 
-    lCRetrunedString := tinyfd_openFileDialog('Choose a filename to read from','../lala.txt', 0, nil, nil, 0);
-    writeln (lCRetrunedString);
-    if Length(lCRetrunedString) = 0 then exit;
+    lCReturnedString := tinyfd_openFileDialog('Choose a filename to read from','../lala.txt', 0, nil, nil, 0);
+    writeln (lCReturnedString);
+    if Length(lCReturnedString) = 0 then exit;
 
-    lCRetrunedString := tinyfd_selectFolderDialog('Select a folder','../..');
-    writeln (lCRetrunedString);
-    if Length(lCRetrunedString) = 0 then exit;
+    lCReturnedString := tinyfd_selectFolderDialog('Select a folder','../..');
+    writeln (lCReturnedString);
+    if Length(lCReturnedString) = 0 then exit;
 
-    lCRetrunedString := tinyfd_colorChooser('A tinyfd title','', lArrayOfChar, lArrayOfChar);
-    writeln (lCRetrunedString);
+    lCReturnedString := tinyfd_colorChooser('A tinyfd title','', lArrayOfChar, lArrayOfChar);
+    writeln (lCReturnedString);
 end.
 
 {
