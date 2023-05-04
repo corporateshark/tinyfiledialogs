@@ -81,7 +81,7 @@ begin
 end.
 
 {
-gcc -c ../../tinyfiledialogs
+gcc -c ../../tinyfiledialogs.c
 fcp tinyfd.pp
 fcp hello.pas
 }
