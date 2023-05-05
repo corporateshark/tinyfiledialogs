@@ -25,6 +25,8 @@
         |        my stackoverflow answer on the PASCAL post         |
         |            https://stackoverflow.com/a/59657117           |
         |___________________________________________________________|
+
+ See compilation instructions at the end of this file
 }
 
 program Hello ;

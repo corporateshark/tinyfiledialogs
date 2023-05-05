@@ -51,13 +51,13 @@ misrepresented as being the original software.
     if a console is missing, it will use graphic dialogs
     if a graphical display is absent, it will use console dialogs
 		(on windows the input box may take some time to open the first time)
-*/
 
+  See compilation instructions at the end of this file
+*/
 
 #include <stdio.h>
 #include <string.h>
 #include "tinyfiledialogs.h"
-
 
 #ifdef _MSC_VER
 #pragma warning(disable:4996) /* silences warnings about strcpy strcat fopen*/

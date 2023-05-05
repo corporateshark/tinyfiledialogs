@@ -57,6 +57,8 @@ Included in LWJGL(java), Rust, Haskell, Allegrobasic.
 | |_______________________________________________________________________________| |
 |___________________________________________________________________________________|
 
+See compilation instructions at the end of this file
+
 void tinyfd_beep();
 
 int tinyfd_notifyPopup(

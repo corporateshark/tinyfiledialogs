@@ -26,6 +26,8 @@
 !        |            https://stackoverflow.com/a/59657117           |
 !        |___________________________________________________________|
 
+! See compilation instructions at the end of this file
+
 	program main
 		use tinyfd
 		use iso_c_binding, only: c_ptr, c_null_char, c_f_pointer, c_loc, c_null_ptr, c_associated, c_int, c_char
