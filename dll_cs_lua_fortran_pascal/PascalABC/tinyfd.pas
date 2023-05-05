@@ -2,7 +2,7 @@
 https://github.com/pascalabcnet/pascalabcnet/discussions/2782
 }
 
-unit TinyFileDialogs;
+unit tinyfd;
 
 uses System;
 
