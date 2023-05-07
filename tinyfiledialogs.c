@@ -157,7 +157,7 @@ char tinyfd_needs[] = "\
       \\|\
 \ntiny file dialogs on Windows needs:\
 \n   a graphic display\
-\nor dialog.exe (curses console mode)\
+\nor dialog.exe (curses console mode  ** Disabled by default **)\
 \nor a console for basic input";
 #else
 char tinyfd_needs[] = "\
@@ -171,9 +171,11 @@ char tinyfd_needs[] = "\
 \n   applescript or kdialog or yad or Xdialog\
 \nor zenity (or matedialog or shellementary or qarma)\
 \nor python (2 or 3) + tkinter + python-dbus (optional)\
-\nor dialog (opens console if needed) ** Disabled by default **/\
+\nor dialog (opens console if needed) ** Disabled by default **\
 \nor xterm + bash (opens console for basic input)\
-\nor existing console for basic input";
+\nor existing console for basic input\
+\nand the command 'which' to be able to choose.";
+
 #endif
 
 #ifdef _MSC_VER
