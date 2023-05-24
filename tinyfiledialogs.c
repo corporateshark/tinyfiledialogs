@@ -3573,7 +3573,7 @@ static char * terminalName(void)
                 {
                         strcpy(lTerminalName , "" ) ;
                 }
-                /* bad: koi rxterm guake tilda vala-terminal qterminal
+                /* bad: koi rxterm guake tilda vala-terminal qterminal kgx
                 aterm Terminal terminology sakura lilyterm weston-terminal
                 roxterm termit xvt rxvt mrxvt urxvt */
         }
