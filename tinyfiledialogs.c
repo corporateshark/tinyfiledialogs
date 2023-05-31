@@ -3,7 +3,7 @@ The code is 100% compatible C C++
 (just comment out << extern "C" >> in the header file) */
 
 /*_________
- /         \ tinyfiledialogs.c v3.13.1 [May 7, 2023] zlib licence
+ /         \ tinyfiledialogs.c v3.13.2 [May 31, 2023] zlib licence
  |tiny file| Unique code file created [November 9, 2014]
  | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -99,7 +99,7 @@ Thanks for contributions, bug corrections & thorough testing to:
 #endif
 #define LOW_MULTIPLE_FILES 32
 
-char tinyfd_version[8] = "3.13.1";
+char tinyfd_version[8] = "3.13.2";
 
 /******************************************************************************************************/
 /**************************************** UTF-8 on Windows ********************************************/
@@ -5325,32 +5325,6 @@ int tinyfd_notifyPopup(
                 }
                 strcat( lDialogString , " \" 5" ) ;
         }
-        else if ( (tfd_zenity3Present()>=5) )
-        {
-                /* zenity 2.32 & 3.14 has the notification but with a bug: it doesnt return from it */
-                /* zenity 3.8 show the notification as an alert ok cancel box */
-                if (aTitle&&!strcmp(aTitle,"tinyfd_query")){strcpy(tinyfd_response,"zenity");return 1;}
-                strcpy( lDialogString , "zenity --notification");
-
-                if ( aIconType && strlen( aIconType ) )
-                {
-                        strcat( lDialogString , " --window-icon '");
-                        strcat( lDialogString , aIconType ) ;
-                        strcat( lDialogString , "'" ) ;
-                }
-
-                strcat( lDialogString , " --text \"" ) ;
-                if ( aTitle && strlen(aTitle) )
-                {
-                        strcat(lDialogString, aTitle) ;
-                        strcat(lDialogString, "\n") ;
-                }
-                if ( aMessage && strlen( aMessage ) )
-                {
-                        strcat( lDialogString , aMessage ) ;
-                }
-                strcat( lDialogString , " \"" ) ;
-        }
         else if ( tfd_yadPresent() )
         {
             if (aTitle&&!strcmp(aTitle,"tinyfd_query")){strcpy(tinyfd_response,"yad");return 1;}
@@ -5438,6 +5412,32 @@ aIconType?aIconType:"", aTitle?aTitle:"", aMessage?aMessage:"" ) ;
                 strcat(lDialogString, lBuff) ;
             }
             strcat( lDialogString , "\"" ) ;
+        }
+        else if ( (tfd_zenity3Present()>=5) )
+        {
+                /* zenity 2.32 & 3.14 has the notification but with a bug: it doesnt return from it */
+                /* zenity 3.8 show the notification as an alert ok cancel box */
+                if (aTitle&&!strcmp(aTitle,"tinyfd_query")){strcpy(tinyfd_response,"zenity");return 1;}
+                strcpy( lDialogString , "zenity --notification");
+
+                if ( aIconType && strlen( aIconType ) )
+                {
+                        strcat( lDialogString , " --window-icon '");
+                        strcat( lDialogString , aIconType ) ;
+                        strcat( lDialogString , "'" ) ;
+                }
+
+                strcat( lDialogString , " --text \"" ) ;
+                if ( aTitle && strlen(aTitle) )
+                {
+                        strcat(lDialogString, aTitle) ;
+                        strcat(lDialogString, "\n") ;
+                }
+                if ( aMessage && strlen( aMessage ) )
+                {
+                        strcat( lDialogString , aMessage ) ;
+                }
+                strcat( lDialogString , " \"" ) ;
         }
         else
         {
