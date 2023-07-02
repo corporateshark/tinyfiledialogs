@@ -1,7 +1,7 @@
 ﻿/*_________
- /         \ tinyfiledialogsTest.cs v3.8.3 [Nov 1, 2020] zlib licence
+ /         \ tinyfiledialogsTest.cs v3.13.3 [Jul 2, 2023] zlib licence
  |tiny file| C# bindings created [2015]
- | dialogs | Copyright (c) 2014 - 2020 Guillaume Vareille http://ysengrin.com
+ | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
  \____  ___/ http://tinyfiledialogs.sourceforge.net
       \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
          ____________________________________________
@@ -37,11 +37,12 @@ using System.Runtime.InteropServices;
 
 class tinyfd
 {
-    public const string mDllLocation = "C:\\Users\\frogs\\yomspace2015\\yomlibs\\tinyfd\\extras_dll_cs_lua_fortran\\tinyfiledialogs32.dll";
-
-    [DllImport(mDllLocation, CallingConvention = CallingConvention.Cdecl)] public static extern void tinyfd_beep();
+    public const string mDllLocation = "C:\\Users\\frogs\\yomspace2015\\yomlibs\\tinyfd\\dll_cs_lua_fortran_pascal\\tinyfiledialogs32.dll";
 
     // cross platform UTF8
+    [DllImport(mDllLocation, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void tinyfd_beep();
+
     [DllImport(mDllLocation, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int tinyfd_notifyPopup(string aTitle, string aMessage, string aIconType);
     [DllImport(mDllLocation, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
@@ -100,6 +101,7 @@ namespace ConsoleApplication1
             return System.Runtime.InteropServices.Marshal.PtrToStringUni(ptr);
         }
 
+        [STAThread]
         static void Main(string[] args)
         {
             // ******** a simple way to access tinyfd's global variables
@@ -112,16 +114,25 @@ namespace ConsoleApplication1
             string lTheInputString = stringFromAnsi(lTheInputText);
             int lala = tinyfd.tinyfd_messageBox("a message box char", lTheInputString, "ok", "warning", 1);
 
+            lTheInputText = tinyfd.tinyfd_selectFolderDialog("select a folder", "");
+            lTheInputString = stringFromAnsi(lTheInputText);
+            lala = tinyfd.tinyfd_messageBox("the chosen folder", lTheInputString, "ok", "warning", 1);
+
             // windows only utf-16
             IntPtr lAnotherInputTextW = tinyfd.tinyfd_inputBoxW("input box", "gimme another string", "Another text to input");
             string lAnotherInputString = stringFromUni(lAnotherInputTextW);
             int lili = tinyfd.tinyfd_messageBoxW("a message box wchar_t", lAnotherInputString, "ok", "info", 1);
 
-            tinyfd.tinyfd_notifyPopupW("there is no warning (even if it is a warning icon)", lTheVersionString, "warning");
+            lAnotherInputTextW = tinyfd.tinyfd_selectFolderDialogW("select a folderW", "");
+            lAnotherInputString = stringFromUni(lAnotherInputTextW);
+            lili = tinyfd.tinyfd_messageBoxW("a message box wchar_t", lAnotherInputString, "ok", "info", 1);
 
+            tinyfd.tinyfd_notifyPopupW("just a dummy warning", lTheVersionString, "warning");
+
+            // cross platform
             tinyfd.tinyfd_beep();
 
-            // ******** a complicated way to access tinyfd's global variables (uncomment the 2 lines in the class tinyfd above)
+            // ******** a complicated way to access tinyfd's global variables (uncomment the last 2 lines in the class tinyfd above)
             // IntPtr tinyfd_DLL = tinyfd.LoadLibrary(tinyfd.mDllLocation);
             // if (tinyfd_DLL != IntPtr.Zero)
             // {
