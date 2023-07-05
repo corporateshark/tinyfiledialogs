@@ -1,8 +1,9 @@
-/* this file can be renamed with extension ".cpp" and compiled as C++.
-The code is 100% compatible C C++
-(just comment out << extern "C" >> in the header file) */
+/* SPDX-License-Identifier: ZLIB
 
-/*_________
+this file can be renamed with extension ".cpp" and compiled as C++.
+The code is 100% compatible C C++
+(just comment out << extern "C" >> in the header file)
+  _________
  /         \ tinyfiledialogs.c v3.13.3 [Jul 2, 2023] zlib licence
  |tiny file| Unique code file created [November 9, 2014]
  | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com

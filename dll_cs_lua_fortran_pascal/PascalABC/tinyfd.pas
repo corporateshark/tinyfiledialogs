@@ -1,5 +1,8 @@
-{ found on this page:
-https://github.com/pascalabcnet/pascalabcnet/discussions/2782
+{ SPDX-License-Identifier: ZLIB
+Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+
+found on this page:
+	https://github.com/pascalabcnet/pascalabcnet/discussions/2782
 }
 
 unit tinyfd;

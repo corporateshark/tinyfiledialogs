@@ -1,7 +1,9 @@
-/*_________
- /         \ hello.c v3.13.3 [Jul 2, 2023] zlib licence
+/* SPDX-License-Identifier: ZLIB
+Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+  _________
+ /         \ hello.c v3.13.3 [Jul 2, 2023]
  |tiny file| Hello World file created [November 9, 2014]
- | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+ | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
       \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
               ____________________________________________

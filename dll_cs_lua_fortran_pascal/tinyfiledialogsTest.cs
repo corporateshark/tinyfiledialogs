@@ -1,7 +1,9 @@
-﻿/*_________
+﻿/* SPDX-License-Identifier: ZLIB
+Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+  _________
  /         \ tinyfiledialogsTest.cs v3.13.3 [Jul 2, 2023] zlib licence
  |tiny file| C# bindings created [2015]
- | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+ | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
       \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
          ____________________________________________

@@ -1,4 +1,7 @@
-tiny file dialogs ( cross-platform C C++ ) v3.13.3 [Jul 2, 2023] zlib licence
+SPDX-License-Identifier: ZLIB
+Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+
+tiny file dialogs ( cross-platform C C++ ) v3.13.3 [Jul 2, 2023]
  _________
 /         \   Tray-popup InputBox PasswordBox MessageBox Notification Beep
 |tiny file|   ColorPicker OpenFileDialog SaveFileDialog SelectFolderDialog

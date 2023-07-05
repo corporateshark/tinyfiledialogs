@@ -1,7 +1,9 @@
+! SPDX-License-Identifier: ZLIB
+! Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
 !  _________
-! /         \ tinyfiledialogs v3.10 [Mar 27, 2023] zlib licence
+! /         \ tinyfiledialogs v3.10 [Mar 27, 2023]
 ! |tiny file|
-! | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+! | dialogs |
 ! \____  ___/ http://tinyfiledialogs.sourceforge.net
 !      \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
 

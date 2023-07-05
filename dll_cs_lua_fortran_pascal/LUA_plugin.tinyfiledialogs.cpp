@@ -1,7 +1,9 @@
-/*_________
- /         \ LUA_plugin.tinyfiledialogs.cpp v3.8.3 [Nov 1, 2020] zlib licence
+/* SPDX-License-Identifier: ZLIB
+Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
+  _________
+ /         \ LUA_plugin.tinyfiledialogs.cpp v3.8.3 [Nov 1, 2020]
  |tiny file| LUA bindings created [2016] Copyright (c) 2016 Steven Johnson
- | dialogs | Copyright (c) 2014 - 2020 Guillaume Vareille http://ysengrin.com
+ | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
       \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
               ____________________________________________
@@ -215,7 +217,7 @@ static luaL_Reg tfd_funcs[] = {
 					}
 
 					else lua_pushstring(L, from);// opts, patts[, filters], files, file
-				
+
 					lua_rawseti(L, -2, fi);	// opts, patts[, filters], files = { ..., file }
 				}
 			}
