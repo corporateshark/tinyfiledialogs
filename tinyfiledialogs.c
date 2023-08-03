@@ -175,7 +175,7 @@ char tinyfd_needs[] = "\
 \nor dialog (opens console if needed) ** Disabled by default **\
 \nor xterm + bash (opens console for basic input)\
 \nor existing console for basic input\
-\nand the command 'which' to detect any of the above.";
+\nand the command \0x60which\0xB4 to detect any of the above.";
 
 #endif
 
