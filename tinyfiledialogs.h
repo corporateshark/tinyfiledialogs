@@ -4,7 +4,7 @@ Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
 If you are using a C++ compiler to compile tinyfiledialogs.c (maybe renamed with an extension ".cpp")
 then comment out << extern "C" >> bellow in this header file)
   _________
- /         \ tinyfiledialogs.h v3.13.3 [Jul 2, 2023]
+ /         \ tinyfiledialogs.h v3.13.4 [Aug 24, 2023]
  |tiny file| Unique header file created [November 9, 2014]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -87,7 +87,6 @@ int tinyfd_setGlobalInt(char const * aIntVariableName, int aValue); /* returns -
    aIntVariableName : "tinyfd_verbose" "tinyfd_silent" "tinyfd_allowCursesDialogs"
 				      "tinyfd_forceConsole" "tinyfd_assumeGraphicDisplay" "tinyfd_winUtf8"
 **************/
-
 
 extern char tinyfd_version[8]; /* contains tinyfd current version number */
 extern char tinyfd_needs[]; /* info about requirements */

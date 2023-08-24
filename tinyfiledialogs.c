@@ -4,7 +4,7 @@ this file can be renamed with extension ".cpp" and compiled as C++.
 The code is 100% compatible C C++
 (just comment out << extern "C" >> in the header file)
   _________
- /         \ tinyfiledialogs.c v3.13.3 [Jul 2, 2023] zlib licence
+ /         \ tinyfiledialogs.c v3.13.4 [Aug 24, 2023] zlib licence
  |tiny file| Unique code file created [November 9, 2014]
  | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -95,7 +95,7 @@ misrepresented as being the original software.
 #endif
 #define LOW_MULTIPLE_FILES 32
 
-char tinyfd_version[8] = "3.13.3";
+char tinyfd_version[8] = "3.13.4";
 
 /******************************************************************************************************/
 /**************************************** UTF-8 on Windows ********************************************/
@@ -170,7 +170,7 @@ char tinyfd_needs[] = "\
 \nor dialog (opens console if needed) ** Disabled by default **\
 \nor xterm + bash (opens console for basic input)\
 \nor existing console for basic input\
-\nand the command `which\x60 to detect any of the above."; /* ` or \x60 is the grave accent */
+\nand the command - which - to detect any of the above."; /* ` or \x60 is the grave accent */
 
 #endif
 
