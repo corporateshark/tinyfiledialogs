@@ -5,15 +5,15 @@ Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
  |tiny file| Hello WCHAR_T windows only file created [November 9, 2014]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
-      \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
-              ____________________________________________
-             |                                            |
-             |   email: tinyfiledialogs at ysengrin.com   |
-             |____________________________________________|
-              _______________________________
-             |                               |
-             | this file is for windows only |
-             |_______________________________|
+	  \|     git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
+			  ____________________________________________
+			 |                                            |
+			 |   email: tinyfiledialogs at ysengrin.com   |
+			 |____________________________________________|
+			  _______________________________
+			 |                               |
+			 | this file is for windows only |
+			 |_______________________________|
 
 If you like tinyfiledialogs, please upvote my stackoverflow answer
 https://stackoverflow.com/a/47651444
