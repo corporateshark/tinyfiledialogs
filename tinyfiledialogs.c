@@ -169,8 +169,7 @@ char tinyfd_needs[] = "\
 \nor python (2 or 3) + tkinter + python-dbus (optional)\
 \nor dialog (opens console if needed) ** Disabled by default **\
 \nor xterm + bash (opens console for basic input)\
-\nor existing console for basic input\
-\nand the command - which - to detect any of the above.";
+\nor existing console for basic input.";
 
 #endif
 
@@ -3275,7 +3274,7 @@ static int dirExists( char const * aDirPath )
 static int detectPresence( char const * aExecutable )
 {
    char lBuff[MAX_PATH_OR_CMD] ;
-   char lTestedString[MAX_PATH_OR_CMD] = "which " ;
+   char lTestedString[MAX_PATH_OR_CMD] = "command -v " ;
    FILE * lIn ;
 #ifdef _GNU_SOURCE
    char* lAllocatedCharString;
