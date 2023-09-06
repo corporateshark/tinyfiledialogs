@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: ZLIB
 Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
   _________
- /         \ hello_wchar_t.c v3.13.4 [Aug 24, 2023]
+ /         \ hello_wchar_t.c v3.13.5 [Sep 6, 2023]
  |tiny file| Hello WCHAR_T windows only file created [November 9, 2014]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net

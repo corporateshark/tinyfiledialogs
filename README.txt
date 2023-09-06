@@ -1,6 +1,6 @@
 SPDX-License-Identifier: ZLIB
 
-tiny file dialogs ( cross-platform C C++ ) v3.13.4 [Aug 24, 2023]
+tiny file dialogs ( cross-platform C C++ ) v3.13.5 [Sep 6, 2023]
  _________
 /         \   Tray-popup InputBox PasswordBox MessageBox Notification Beep
 |tiny file|   ColorPicker OpenFileDialog SaveFileDialog SelectFolderDialog
