@@ -1,5 +1,5 @@
-gcc -m32 -fPIC -shared -o tinyfiledialogsX86.so tinyfiledialogs.c
-gcc -m32 -o hello hello.c ./tinyfiledialogsX86.so
+gcc -m32 -fPIC -shared -o tinyfiledialogsX86.so ../tinyfiledialogs.c
+gcc -m32 -o hello ../hello.c ./tinyfiledialogsX86.so
 
-gcc -m64 -fPIC -shared -o tinyfiledialogsX64.so tinyfiledialogs.c
-gcc -m64 -o hello hello.c ./tinyfiledialogsX64.so
+gcc -m64 -fPIC -shared -o tinyfiledialogsX64.so ../tinyfiledialogs.c
+gcc -m64 -o hello ../hello.c ./tinyfiledialogsX64.so
