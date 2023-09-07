@@ -1,8 +1,5 @@
-compile:
-gcc -fPIC -shared -o libtinyfd.so tinyfiledialogs.c
+gcc -m32 -fPIC -shared -o tinyfiledialogsX86.so tinyfiledialogs.c
+gcc -m32 -o hello hello.c ./tinyfiledialogsX86.so
 
-link:
-gcc -o hello hello.c ./libtinyfd.so
-
-
-to both lines, you can add -m32 or -m64 to target the intended instruction set.
+gcc -m64 -fPIC -shared -o tinyfiledialogsX64.so tinyfiledialogs.c
+gcc -m64 -o hello hello.c ./tinyfiledialogsX64.so
