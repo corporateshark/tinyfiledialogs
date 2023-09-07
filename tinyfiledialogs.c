@@ -4050,7 +4050,7 @@ static int python3Present(void)
 				lPython3Present = 0 ;
 				strcpy(gPython3Name , "python3" ) ;
 				if ( detectPresence(gPython3Name) ) lPython3Present = 1;
-				else
+				/*else
 				{
 						for ( i = 9 ; i >= 0 ; i -- )
 						{
@@ -4061,7 +4061,7 @@ static int python3Present(void)
 										break;
 								}
 						}
-				}
+				}*/
 				if (tinyfd_verbose) printf("lPython3Present %d\n", lPython3Present) ;
 				if (tinyfd_verbose) printf("gPython3Name %s\n", gPython3Name) ;
 		}
