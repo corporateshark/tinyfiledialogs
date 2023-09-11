@@ -7675,6 +7675,49 @@ frontmost of process \\\"Python\\\" to true' ''');");
 #endif /* _WIN32 */
 
 
+
+/* Modified prototypes for R */
+
+void tfd_messageBox(
+	char const * aTitle ,
+	char const * aMessage , 
+	char const * aDialogType , 
+	char const * aIconType , 
+	int * aioDefaultButton )
+{
+	* aioDefaultButton = tinyfd_messageBox( aTitle , aMessage , aDialogType , aIconType , * aioDefaultButton ) ;
+}
+
+
+void tfd_inputBox(
+	char const * aTitle ,
+	char const * aMessage ,
+	char * * aioDefaultInput )
+{
+	char * lReturnedInput ;
+	if ( ! strcmp( * aioDefaultInput , "NULL") )  lReturnedInput = tinyfd_inputBox( aTitle , aMessage , NULL ) ;
+	else lReturnedInput = tinyfd_inputBox( aTitle , aMessage , * aioDefaultInput ) ;
+
+	if ( lReturnedInput ) strcpy ( * aioDefaultInput , lReturnedInput ) ; 
+	else strcpy ( * aioDefaultInput , "NULL" ) ;
+}
+
+
+void tfd_selectFolderDialog(
+	char const * aTitle ,
+	char const * aDefaultPath ,
+	char * * aoSelectedfolder )
+{
+	char * lSelectedfolder ;
+	lSelectedfolder = tinyfd_selectFolderDialog( aTitle, aDefaultPath ) ;
+	if ( lSelectedfolder ) strcpy ( * aoSelectedfolder , lSelectedfolder ) ; 
+	else strcpy ( * aoSelectedfolder , "NULL" ) ; 
+}
+
+/* end of Modified prototypes for R */
+
+
+
 /*
 int main( int argc , char * argv[] )
 {
