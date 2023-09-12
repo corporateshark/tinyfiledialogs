@@ -4,7 +4,7 @@ this file can be renamed with extension ".cpp" and compiled as C++.
 The code is 100% compatible C C++
 (just comment out << extern "C" >> in the header file)
   _________
- /         \ tinyfiledialogs.c v3.13.5 [Sep 6, 2023] zlib licence
+ /         \ tinyfiledialogs.c v3.13.6 [Sep 12, 2023] zlib licence
  |tiny file| Unique code file created [November 9, 2014]
  | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -95,7 +95,7 @@ misrepresented as being the original software.
 #endif
 #define LOW_MULTIPLE_FILES 32
 
-char tinyfd_version[8] = "3.13.5";
+char tinyfd_version[8] = "3.13.6";
 
 /******************************************************************************************************/
 /**************************************** UTF-8 on Windows ********************************************/
@@ -7675,43 +7675,89 @@ frontmost of process \\\"Python\\\" to true' ''');");
 #endif /* _WIN32 */
 
 
-
 /* Modified prototypes for R */
 
 void tfd_messageBox(
 	char const * aTitle ,
 	char const * aMessage , 
 	char const * aDialogType , 
-	char const * aIconType , 
-	int * aioDefaultButton )
+	char const * aIconType ,
+	int * aiDefaultButton )
 {
-	* aioDefaultButton = tinyfd_messageBox( aTitle , aMessage , aDialogType , aIconType , * aioDefaultButton ) ;
+	* aiDefaultButton = tinyfd_messageBox( aTitle , aMessage , aDialogType , aIconType , * aiDefaultButton ) ;
 }
 
 
 void tfd_inputBox(
 	char const * aTitle ,
 	char const * aMessage ,
-	char * * aioDefaultInput )
+	char * * aiDefaultInput )
 {
 	char * lReturnedInput ;
-	if ( ! strcmp( * aioDefaultInput , "NULL") )  lReturnedInput = tinyfd_inputBox( aTitle , aMessage , NULL ) ;
-	else lReturnedInput = tinyfd_inputBox( aTitle , aMessage , * aioDefaultInput ) ;
+	if ( ! strcmp( * aiDefaultInput , "NULL") )  lReturnedInput = tinyfd_inputBox( aTitle , aMessage , NULL ) ;
+	else lReturnedInput = tinyfd_inputBox( aTitle , aMessage , * aiDefaultInput ) ;
 
-	if ( lReturnedInput ) strcpy ( * aioDefaultInput , lReturnedInput ) ; 
-	else strcpy ( * aioDefaultInput , "NULL" ) ;
+	if ( lReturnedInput ) strcpy ( * aiDefaultInput , lReturnedInput ) ; 
+	else strcpy ( * aiDefaultInput , "NULL" ) ;
+}
+
+
+void tfd_saveFileDialog(
+	char const * aTitle ,
+	char * * aiDefaultPathAndFile )
+/*	int * aNumOfFilterPatterns ,
+	char const * const * aFilterPatterns ,
+	char const * aSingleFilterDescription ) */
+{
+	char * lSavefile ;
+	/*lSavefile = tinyfd_saveFileDialog( aTitle , * aiDefaultPathAndFile , * aNumOfFilterPatterns ,
+										aFilterPatterns , aSingleFilterDescription ) ;*/
+	lSavefile = tinyfd_saveFileDialog( aTitle , * aiDefaultPathAndFile , 0 , NULL, NULL);
+
+	if ( lSavefile ) strcpy ( * aiDefaultPathAndFile , lSavefile ) ; 
+	else strcpy ( * aiDefaultPathAndFile , "NULL" ) ; 
+}
+
+
+void tfd_openFileDialog(
+	char const * aTitle ,
+	char * * aiDefaultPathAndFile ,
+/*	int * aNumOfFilterPatterns ,
+	char const * const * aFilterPatterns ,
+	char const * aSingleFilterDescription , */
+	int * aAllowMultipleSelects )
+{
+	char * lOpenfile ;
+	/*lSavefile = tinyfd_saveFileDialog( aTitle , * aiDefaultPathAndFile , * aNumOfFilterPatterns ,
+										aFilterPatterns , aSingleFilterDescription ) ;*/
+	lOpenfile = tinyfd_openFileDialog( aTitle , * aiDefaultPathAndFile , 0 , NULL, NULL, * aAllowMultipleSelects );
+
+	if ( lOpenfile ) strcpy ( * aiDefaultPathAndFile , lOpenfile ) ; 
+	else strcpy ( * aiDefaultPathAndFile , "NULL" ) ; 
 }
 
 
 void tfd_selectFolderDialog(
 	char const * aTitle ,
-	char const * aDefaultPath ,
-	char * * aoSelectedfolder )
+	char * * aiDefaultPath )
 {
 	char * lSelectedfolder ;
-	lSelectedfolder = tinyfd_selectFolderDialog( aTitle, aDefaultPath ) ;
-	if ( lSelectedfolder ) strcpy ( * aoSelectedfolder , lSelectedfolder ) ; 
-	else strcpy ( * aoSelectedfolder , "NULL" ) ; 
+	lSelectedfolder = tinyfd_selectFolderDialog( aTitle, * aiDefaultPath ) ;
+	if ( lSelectedfolder ) strcpy ( * aiDefaultPath , lSelectedfolder ) ; 
+	else strcpy ( * aiDefaultPath , "NULL" ) ; 
+}
+
+
+void tfd_colorChooser(
+	char const * aTitle ,
+	char * * aiDefaultHexRGB )
+{
+	unsigned char const aDefaultRGB [ 3 ] ;
+	unsigned char aoResultRGB [ 3 ] ;
+	char * lChosenColor ;
+	lChosenColor = tinyfd_colorChooser( aTitle, * aiDefaultHexRGB, aDefaultRGB, aoResultRGB ) ;
+	if ( lChosenColor ) strcpy ( * aiDefaultHexRGB , lChosenColor ) ; 
+	else strcpy ( * aiDefaultHexRGB , "NULL" ) ; 
 }
 
 /* end of Modified prototypes for R */
