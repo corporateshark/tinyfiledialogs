@@ -34,7 +34,7 @@ tinyfd_messageBox <- function(aTitle , aMessage , aDialogType , aIconType , aDef
                 charToRaw(aMessage),
                 charToRaw(aDialogType),
                 charToRaw(aIconType),
-		lDefaultButton = aDefaultButton )
+		lDefaultButton = as.integer(aDefaultButton) )
 
   return(result$lDefaultButton)
 }
@@ -52,28 +52,35 @@ tinyfd_inputBox <- function(aTitle , aMessage , aDefaultInput) # "NULL" for a pa
 }
 
 
-tinyfd_saveFileDialog <- function(aTitle, aDefaultPathAndFile)
+tinyfd_saveFileDialog <- function(aTitle, aDefaultPathAndFile, aNumOfFilterPatterns,
+					aFilterPatterns, aSingleFilterDescription )
 {
   result <- .C("tfd_saveFileDialog",
                 charToRaw(aTitle),
-		lSaveFile = aDefaultPathAndFile )
+		lSaveFile = aDefaultPathAndFile ,
+		as.integer(aNumOfFilterPatterns) ,
+		aFilterPatterns ,
+		charToRaw(aSingleFilterDescription) )
 
   if ( result$lSaveFile == "NULL" ) return()
   else return(result$lSaveFile)
 }
 
 
-tinyfd_openFileDialog <- function(aTitle, aDefaultPathAndFile , aAllowMultipleSelects )
+tinyfd_openFileDialog <- function(aTitle, aDefaultPathAndFile , aNumOfFilterPatterns,
+			aFilterPatterns, aSingleFilterDescription , aAllowMultipleSelects )
 {
   result <- .C("tfd_openFileDialog",
                 charToRaw(aTitle),
 		lOpenFile = aDefaultPathAndFile ,
-		aAllowMultipleSelects )
+		as.integer(aNumOfFilterPatterns) ,
+		aFilterPatterns ,
+		charToRaw(aSingleFilterDescription) ,
+		as.integer(aAllowMultipleSelects) )
 
   if ( result$lOpenFile == "NULL" ) return()
   else return(result$lOpenFile)
 }
-
 
 
 tinyfd_selectFolderDialog <- function(aTitle, aDefaultPath)
@@ -98,13 +105,14 @@ tinyfd_colorChooser <- function(aTitle, aDefaultHexRGB) # "#FF0000"
 }
 
 
-# R calls to tinyfd functions
+# example R calls to tinyfd functions
 
-tinyfd_beep()
-tinyfd_notifyPopup( "a title" , "a message", "warning" )
-tinyfd_messageBox( "a title" , "a message" , "yesno" , "info" , as.integer(1) )
-tinyfd_inputBox( "a title" , "a message" , "NULL" ) # "NULL" for a password box
-tinyfd_saveFileDialog( "a title" , "/Users/bardos/Documents/" )
-tinyfd_openFileDialog( "a title" , "/Users/bardos/Documents/test.txt" , as.integer(1) )
-tinyfd_selectFolderDialog( "a title" , "/Users/bardos/Devs" )
-tinyfd_colorChooser( "a title" , "#FF0000" )
+#tinyfd_beep()
+#tinyfd_notifyPopup( "a title" , "a message", "warning" )
+#tinyfd_messageBox( "a title" , "a message" , "yesno" , "info" , 0 )
+#tinyfd_inputBox( "a title" , "a message" , "NULL" ) # "NULL" for a password box
+#tinyfd_saveFileDialog( "a title" , "/Users/bardos/Documents/test.txt" , 0 , "" , "")
+#tinyfd_saveFileDialog( "a title" , "/Users/bardos/Documents/test.txt" , 1  , c ("*.txt","*.jpg") , "some files")
+#tinyfd_openFileDialog( "a title" , "/Users/bardos/Documents/" , 1 , c ("*.txt","*.jpg") , "some files" , 0 )
+#tinyfd_selectFolderDialog( "a title" , "/Users/bardos/Devs" )
+#tinyfd_colorChooser( "a title" , "#FF0000" )

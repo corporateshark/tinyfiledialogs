@@ -7704,16 +7704,17 @@ void tfd_inputBox(
 
 void tfd_saveFileDialog(
 	char const * aTitle ,
-	char * * aiDefaultPathAndFile )
-/*	int * aNumOfFilterPatterns ,
+	char * * aiDefaultPathAndFile ,
+	int const * aNumOfFilterPatterns ,
 	char const * const * aFilterPatterns ,
-	char const * aSingleFilterDescription ) */
+	char const * aSingleFilterDescription )
 {
 	char * lSavefile ;
-	/*lSavefile = tinyfd_saveFileDialog( aTitle , * aiDefaultPathAndFile , * aNumOfFilterPatterns ,
-										aFilterPatterns , aSingleFilterDescription ) ;*/
-	lSavefile = tinyfd_saveFileDialog( aTitle , * aiDefaultPathAndFile , 0 , NULL, NULL);
-
+	
+	/* printf( "aFilterPatterns %s\n" , aFilterPatterns [0]); */
+	
+	lSavefile = tinyfd_saveFileDialog( aTitle , * aiDefaultPathAndFile , * aNumOfFilterPatterns ,
+										aFilterPatterns, aSingleFilterDescription ) ;
 	if ( lSavefile ) strcpy ( * aiDefaultPathAndFile , lSavefile ) ; 
 	else strcpy ( * aiDefaultPathAndFile , "NULL" ) ; 
 }
@@ -7722,15 +7723,17 @@ void tfd_saveFileDialog(
 void tfd_openFileDialog(
 	char const * aTitle ,
 	char * * aiDefaultPathAndFile ,
-/*	int * aNumOfFilterPatterns ,
+	int const * aNumOfFilterPatterns ,
 	char const * const * aFilterPatterns ,
-	char const * aSingleFilterDescription , */
-	int * aAllowMultipleSelects )
+	char const * aSingleFilterDescription ,
+	int const * aAllowMultipleSelects )
 {
 	char * lOpenfile ;
-	/*lSavefile = tinyfd_saveFileDialog( aTitle , * aiDefaultPathAndFile , * aNumOfFilterPatterns ,
-										aFilterPatterns , aSingleFilterDescription ) ;*/
-	lOpenfile = tinyfd_openFileDialog( aTitle , * aiDefaultPathAndFile , 0 , NULL, NULL, * aAllowMultipleSelects );
+
+	/* printf( "aFilterPatterns %s\n" , aFilterPatterns [0]); */
+	
+	lOpenfile = tinyfd_openFileDialog( aTitle , * aiDefaultPathAndFile , * aNumOfFilterPatterns ,
+									aFilterPatterns , aSingleFilterDescription , * aAllowMultipleSelects ) ;
 
 	if ( lOpenfile ) strcpy ( * aiDefaultPathAndFile , lOpenfile ) ; 
 	else strcpy ( * aiDefaultPathAndFile , "NULL" ) ; 
