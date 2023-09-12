@@ -151,6 +151,7 @@ tinyfd_messageBox( "a title" , "a message" , "yesno" , "info" , 1 )
 tinyfd_inputBox( "a title" , "a message" , "NULL" ) # "NULL" for a password box
 tinyfd_saveFileDialog( "a title" , "/Users/bardos/Documents/test.txt" , 0 , "" , "")
 tinyfd_saveFileDialog( "a title" , "/Users/bardos/Documents/test.txt" , 1  , c ("*.txt","*.jpg") , "some files")
-tinyfd_openFileDialog( "a title" , "/Users/bardos/Documents/" , 1 , c ("*.txt","*.jpg") , "some files" , 0 )
+lFilename <- tinyfd_openFileDialog( "a title" , "/Users/bardos/Documents/" , 1 , c ("*.txt","*.jpg") , "some files" , 0 )
+lFilename
 tinyfd_selectFolderDialog( "a title" , "/Users/bardos/Devs" )
 tinyfd_colorChooser( "a title" , "#FF0000" )
