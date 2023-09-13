@@ -38,10 +38,10 @@ dyn.load("tinyfiledialogsAppleSilicon.dylib")
 #dyn.load("tinyfiledialogsIntel.dylib")
 
 # Linux on Intel
-#dyn.load("tinyfiledialogsLinux86.so")
-#dyn.load("tinyfiledialogsLinux64.so")
+#dyn.load("tinyfiledialogsX86.so")
+#dyn.load("tinyfiledialogsX64.so")
 
-# Windows on Intel
+# windows on Intel
 #dyn.load("tinyfiledialogs32.dll")
 #dyn.load("tinyfiledialogs64.dll")
 
