@@ -7755,8 +7755,8 @@ void tfd_colorChooser(
 	char const * aTitle ,
 	char * * aiDefaultHexRGB )
 {
-	unsigned char const aDefaultRGB [ 3 ] ;
-	unsigned char aoResultRGB [ 3 ] ;
+	unsigned char const aDefaultRGB [ 3 ] = {128,128,128} ;
+	unsigned char aoResultRGB [ 3 ] =  {128,128,128} ;
 	char * lChosenColor ;
 	lChosenColor = tinyfd_colorChooser( aTitle, * aiDefaultHexRGB, aDefaultRGB, aoResultRGB ) ;
 	if ( lChosenColor ) strcpy ( * aiDefaultHexRGB , lChosenColor ) ; 
