@@ -1,5 +1,11 @@
 SPDX-License-Identifier: ZLIB
 
+**************** THE LATEST VERSION IS ONLY ON SOURCEFORGE ****************
+
+				   http://tinyfiledialogs.sourceforge.net
+		 git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
+***************************************************************************
+
 tiny file dialogs ( cross-platform C C++ ) v3.14.0 [Sep 12, 2023]
  _________
 /         \   Tray-popup InputBox PasswordBox MessageBox Notification Beep
@@ -16,9 +22,6 @@ using Gnome Kde Mate Enlightenment Cinnamon Budgie Unity Lxde Lxqt Xfce
 
 Bindings for LUA, C#, dll, Fortran, Pascal.
 Included in LWJGL(java), Rust, Haskell, Allegrobasic.
-
-                   http://tinyfiledialogs.sourceforge.net
-         git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
  ____________________________________________________________________________
 |  ________________________________________________________________________  |
 | |  ____________________________________________________________________  | |
@@ -31,6 +34,7 @@ Included in LWJGL(java), Rust, Haskell, Allegrobasic.
         |                                                           |
         | v3.10: NEW FORTRAN module fully implemented with examples |
         | v3.13: NEW PASCAL unit fully implemented with examples    |
+        | v3.14: NEW R inteface fully implemented with examples     |
         |___________________________________________________________|
      _____________________________________________________________________
     |                                                                     |
