@@ -2,8 +2,8 @@ SPDX-License-Identifier: ZLIB
 
 **************** THE LATEST VERSION IS ONLY ON SOURCEFORGE ****************
 
-				   http://tinyfiledialogs.sourceforge.net
-		 git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
+                   http://tinyfiledialogs.sourceforge.net
+         git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
 ***************************************************************************
 
 tiny file dialogs ( cross-platform C C++ ) v3.14.0 [Sep 12, 2023]
