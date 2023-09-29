@@ -97,6 +97,8 @@ int main( int argc , char * argv[] )
 
 	tinyfd_beep();
 
+	tinyfd_messageBox("This will open calculator", "$LALA", "ok", "info", 1);
+
 	lWillBeGraphicMode = tinyfd_inputBox("tinyfd_query", NULL, NULL);
 
 	strcpy(lBuffer, "tinyfiledialogs\nv");

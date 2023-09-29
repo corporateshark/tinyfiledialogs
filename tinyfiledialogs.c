@@ -425,7 +425,7 @@ int tfd_quoteDetected(char const * aString)
 		p = aString;
 		while ((p = strchr(p, '$')))
 		{
-			if ( p[1] == '(') return 1;
+			return 1;
 		}
 
 		return 0;
