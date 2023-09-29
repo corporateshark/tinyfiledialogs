@@ -4,7 +4,7 @@ Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
 If you are using a C++ compiler to compile tinyfiledialogs.c (maybe renamed with an extension ".cpp")
 then comment out << extern "C" >> bellow in this header file)
   _________
- /         \ tinyfiledialogs.h v3.14.0 [Sep 12, 2023]
+ /         \ tinyfiledialogs.h v3.15.0 [Sep 29, 2023]
  |tiny file| Unique header file created [November 9, 2014]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net

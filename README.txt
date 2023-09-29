@@ -6,7 +6,7 @@ SPDX-License-Identifier: ZLIB
          git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
 ***************************************************************************
 
-tiny file dialogs ( cross-platform C C++ ) v3.14.0 [Sep 12, 2023]
+tiny file dialogs ( cross-platform C C++ ) v3.15.0 [Sep 29, 2023]
  _________
 /         \   Tray-popup InputBox PasswordBox MessageBox Notification Beep
 |tiny file|   ColorPicker OpenFileDialog SaveFileDialog SelectFolderDialog

@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: ZLIB
 Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
   _________
- /         \ hello.c v3.14.0 [Sep 12, 2023]
+ /         \ hello.c v3.15.0 [Sep 29, 2023]
  |tiny file| Hello World file created [November 9, 2014]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
