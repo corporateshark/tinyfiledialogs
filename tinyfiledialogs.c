@@ -425,7 +425,8 @@ int tfd_quoteDetected(char const * aString)
 		p = aString;
 		while ((p = strchr(p, '$')))
 		{
-			return 1;
+			p ++ ;
+			if ( ( * p == '_' ) || ( * p == '(' ) || isalpha( * p ) ) return 1 ;
 		}
 
 		return 0;
