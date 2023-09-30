@@ -400,36 +400,34 @@ static void wipefile(char const * aFilename)
 
 int tfd_quoteDetected(char const * aString)
 {
-		char const * p;
+	char const * p;
 
-		if (!aString) return 0;
+	if (!aString) return 0;
 
-		p = aString;
-		while ((p = strchr(p, '\'')))
-		{
-				return 1;
-		}
+	p = aString;
+	if ( strchr(p, '\''))
+	{
+		return 1;
+	}
 
-		p = aString;
-		while ((p = strchr(p, '\"')))
-		{
-				return 1;
-		}
+	if ( strchr(p, '\"'))
+	{
+		return 1;
+	}
 
-		p = aString;
-		while ((p = strchr(p, '`')))
-		{
-				return 1;
-		}
+	if ( strchr(p, '`'))
+	{
+		return 1;
+	}
 
-		p = aString;
-		while ((p = strchr(p, '$')))
-		{
-			p ++ ;
-			if (( * p == '(' )) return 1 ;
-		}
+	p = aString;
+	while ((p = strchr(p, '$')))
+	{
+		p ++ ;
+		if (( * p == '(' )) return 1 ;
+	}
 
-		return 0;
+	return 0;
 }
 
 
