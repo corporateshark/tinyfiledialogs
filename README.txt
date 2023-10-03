@@ -20,7 +20,7 @@ on Windows Mac Linux Bsd Solaris Minix Raspbian Flatpak
 using Gnome Kde Mate Enlightenment Cinnamon Budgie Unity Lxde Lxqt Xfce
       WindowMaker IceWm Cde Jds OpenBox Awesome Jwm Xdm Cwm
 
-Bindings for LUA, C#, dll, Fortran, Pascal.
+Bindings for LUA, C#, dll, Fortran, Pascal, R.
 Included in LWJGL(java), Rust, Haskell, Allegrobasic.
  ____________________________________________________________________________
 |  ________________________________________________________________________  |
