@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: ZLIB
 Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
   _________
- /         \ hello.c v3.15.0 [Sep 29, 2023]
+ /         \ hello.c v3.15.1 [Oct 12, 2023]
  |tiny file| Hello World file created [November 9, 2014]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -55,6 +55,13 @@ misrepresented as being the original software.
 		(on windows the input box may take some time to open the first time)
 
   See compilation instructions at the end of this file
+
+     __________________________________________
+    |  ______________________________________  |
+    | |                                      | |
+    | | DO NOT USE USER INPUT IN THE DIALOGS | |
+    | |______________________________________| |
+    |__________________________________________|
 */
 
 #include <stdio.h>

@@ -6,7 +6,7 @@ SPDX-License-Identifier: ZLIB
          git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
 ***************************************************************************
 
-tiny file dialogs ( cross-platform C C++ ) v3.15.0 [Sep 29, 2023]
+tiny file dialogs ( cross-platform C C++ ) v3.15.1 [Oct 12, 2023]
  _________
 /         \   Tray-popup InputBox PasswordBox MessageBox Notification Beep
 |tiny file|   ColorPicker OpenFileDialog SaveFileDialog SelectFolderDialog
@@ -56,12 +56,21 @@ Included in LWJGL(java), Rust, Haskell, Allegrobasic.
 | |                        functions to convert between UTF-8, UTF-16 and MBCS | |
 | |____________________________________________________________________________| |
 |________________________________________________________________________________|
+
  ___________________________________________________________________________________
 |  _______________________________________________________________________________  |
 | |                                                                               | |
 | | wchar_t UTF-16 (windows only) prototypes are at the bottom of the header file | |
 | |_______________________________________________________________________________| |
 |___________________________________________________________________________________|
+
+     __________________________________________
+    |  ______________________________________  |
+    | |                                      | |
+    | | DO NOT USE USER INPUT IN THE DIALOGS | |
+    | |______________________________________| |
+    |__________________________________________|
+
 
 See compilation instructions at the end of this file
 

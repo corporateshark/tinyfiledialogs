@@ -4,7 +4,7 @@ this file can be renamed with extension ".cpp" and compiled as C++.
 The code is 100% compatible C C++
 (just comment out << extern "C" >> in the header file)
   _________
- /         \ tinyfiledialogs.c v3.15.0 [Sep 29, 2023] zlib licence
+ /         \ tinyfiledialogs.c v3.15.1 [Sep 29, 2023] zlib licence
  |tiny file| Unique code file created [November 9, 2014]
  | dialogs | Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -41,6 +41,13 @@ appreciated but is not required.
 2. Altered source versions must be plainly marked as such, and must not be
 misrepresented as being the original software.
 3. This notice may not be removed or altered from any source distribution.
+
+     __________________________________________
+    |  ______________________________________  |
+    | |                                      | |
+    | | DO NOT USE USER INPUT IN THE DIALOGS | |
+    | |______________________________________| |
+    |__________________________________________|
 */
 
 
@@ -95,7 +102,7 @@ misrepresented as being the original software.
 #endif
 #define LOW_MULTIPLE_FILES 32
 
-char tinyfd_version[8] = "3.15.0";
+char tinyfd_version[8] = "3.15.1";
 
 /******************************************************************************************************/
 /**************************************** UTF-8 on Windows ********************************************/

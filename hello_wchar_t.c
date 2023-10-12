@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: ZLIB
 Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
   _________
- /         \ hello_wchar_t.c v3.15.0 [Sep 29, 2023]
+ /         \ hello_wchar_t.c v3.15.1 [Oct 12, 2023]
  |tiny file| Hello WCHAR_T windows only file created [November 9, 2014]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -34,6 +34,13 @@ misrepresented as being the original software.
 3. This notice may not be removed or altered from any source distribution.
 
   See compilation instructions at the end of this file
+
+     __________________________________________
+    |  ______________________________________  |
+    | |                                      | |
+    | | DO NOT USE USER INPUT IN THE DIALOGS | |
+    | |______________________________________| |
+    |__________________________________________|
 */
 
 #include <stdlib.h>
