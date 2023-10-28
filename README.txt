@@ -1,6 +1,6 @@
 SPDX-License-Identifier: ZLIB
 
-********* TINY FILE DIALOGS LATEST VERSION IS ONLY ON SOURCEFORGE *********
+********* TINY FILE DIALOGS OFFICIAL WEBSITE IS ON SOURCEFORGE *********
 
                    http://tinyfiledialogs.sourceforge.net
          git clone http://git.code.sf.net/p/tinyfiledialogs/code tinyfd
