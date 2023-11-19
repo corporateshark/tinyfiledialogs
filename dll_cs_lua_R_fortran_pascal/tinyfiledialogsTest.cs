@@ -1,7 +1,7 @@
 ﻿/* SPDX-License-Identifier: ZLIB
 Copyright (c) 2014 - 2023 Guillaume Vareille http://ysengrin.com
   _________
- /         \ tinyfiledialogsTest.cs v3.13.3 [Jul 2, 2023] zlib licence
+ /         \ tinyfiledialogsTest.cs v3.15.1 [Nov 19, 2023] zlib licence
  |tiny file| C# bindings created [2015]
  | dialogs |
  \____  ___/ http://tinyfiledialogs.sourceforge.net
@@ -48,7 +48,7 @@ class tinyfd
     [DllImport(mDllLocation, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int tinyfd_notifyPopup(string aTitle, string aMessage, string aIconType);
     [DllImport(mDllLocation, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int tinyfd_messageBox(string aTitle, string aMessage, string aDialogTyle, string aIconType, int aDefaultButton);
+        public static extern int tinyfd_messageBox(string aTitle, string aMessage, string aDialogType, string aIconType, int aDefaultButton);
     [DllImport(mDllLocation, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr tinyfd_inputBox(string aTitle, string aMessage, string aDefaultInput);
     [DllImport(mDllLocation, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
@@ -64,7 +64,7 @@ class tinyfd
     [DllImport(mDllLocation, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         public static extern int tinyfd_notifyPopupW(string aTitle, string aMessage, string aIconType);
     [DllImport(mDllLocation, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int tinyfd_messageBoxW(string aTitle, string aMessage, string aDialogTyle, string aIconType, int aDefaultButton);
+        public static extern int tinyfd_messageBoxW(string aTitle, string aMessage, string aDialogType, string aIconType, int aDefaultButton);
     [DllImport(mDllLocation, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr tinyfd_inputBoxW(string aTitle, string aMessage, string aDefaultInput);
     [DllImport(mDllLocation, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
