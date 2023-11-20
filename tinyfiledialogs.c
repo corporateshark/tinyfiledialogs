@@ -4247,7 +4247,7 @@ void tinyfd_beep(void)
 		}
 		else
 		{
-				strcpy( lDialogString , "printf \\a > /dev/tty" ) ;
+				strcpy( lDialogString , "printf '\\a' > /dev/tty" ) ;
 		}
 
 		if (tinyfd_verbose) printf( "lDialogString: %s\n" , lDialogString ) ;
