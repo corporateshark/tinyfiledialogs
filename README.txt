@@ -182,7 +182,7 @@ char const * tinyfd_colorChooser(
  |_________________________________________________________________|
 
 OSX :
-$ clang -o hello.app hello.c tinyfiledialogs.c
+$ clang -o hello hello.c tinyfiledialogs.c
 ( or gcc )
 
 UNIX :
