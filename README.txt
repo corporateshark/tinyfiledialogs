@@ -181,13 +181,10 @@ char const * tinyfd_colorChooser(
  |   if a graphical display is absent, it will use console dialogs |
  |_________________________________________________________________|
 
-OSX :
-$ clang -o hello hello.c tinyfiledialogs.c
-( or gcc )
 
-UNIX :
-$ gcc -o hello hello.c tinyfiledialogs.c
-( or clang tcc owcc cc CC )
+UNIX (including MacOS):
+$ clang -o hello hello.c tinyfiledialogs.c
+( or gcc tcc owcc cc CC )
 ( usefull warnings: -g3 -Wall -Wextra -Wdouble-promotion -Wconversion -Wno-sign-conversion
 -Wno-unused-parameter -Wno-unused-function -fsanitize=undefined -fsanitize=thread )
 
