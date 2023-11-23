@@ -182,7 +182,7 @@ char const * tinyfd_colorChooser(
  |_________________________________________________________________|
 
 
-UNIX (including MacOS):
+UNIX (including MacOS) :
 $ clang -o hello hello.c tinyfiledialogs.c
 ( or gcc tcc owcc cc CC )
 ( usefull warnings: -g3 -Wall -Wextra -Wdouble-promotion -Wconversion -Wno-sign-conversion
